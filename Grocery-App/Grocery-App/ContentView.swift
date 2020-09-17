@@ -9,8 +9,87 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var mGroceryViewModel = GroceryViewModel()
+    
     var body: some View {
-        Text("Hello, World!")
+        NavigationView{
+            List{
+                ForEach(mGroceryViewModel.groceries, id: \.self){ grocery in
+                    
+                    return HStack(){
+                        
+                        VStack(alignment: .leading){
+                            Text("Pizza")
+                                .fontWeight(.bold)
+                                .font(.title)
+                            
+                            Text("This is for the kids at home")
+                                .fontWeight(.regular)
+                                .foregroundColor(.secondary)
+                                .padding(.top, 20)
+                            
+                        }
+                        Spacer()
+                        VStack{
+                            Button(action:{
+                                self.mGroceryViewModel.isPopOverShown = true
+                            }){
+                                Image(systemName: "pencil")
+                            }.sheet(isPresented: self.$mGroceryViewModel.isPopOverShown){
+                                VStack(spacing: 24){
+                                    TextField("Grocery Name", text: self.$mGroceryViewModel.groceryName )
+                                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    TextField("Grocery Desription", text: self.$mGroceryViewModel.groceryDescription)
+                                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    TextField("Grocery Amount" , text:
+                                        self.$mGroceryViewModel.groceryAmount)
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    Button(action:{
+                                        self.mGroceryViewModel.isPopOverShown = false
+                                    }){
+                                        Text("Add Grocery")
+                                    }
+                                }.padding()
+                            }
+                            Spacer()
+                            Text("x5")
+                                .font(.headline)
+                            
+                        }
+                    }.padding()
+                    
+                }
+                .onDelete(perform: deleteItems)
+            }
+            .navigationBarTitle(Text("Grocery App"))
+            .navigationBarItems(trailing: Button("Add New"){
+                self.mGroceryViewModel.isPopOverShown = true
+                
+            }.sheet(isPresented: $mGroceryViewModel.isPopOverShown){
+                VStack(spacing: 24){
+                    TextField("Grocery Name", text: self.$mGroceryViewModel.groceryName )
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    TextField("Grocery Desription", text: self.$mGroceryViewModel.groceryDescription)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    TextField("Grocery Amount" , text:
+                        self.$mGroceryViewModel.groceryAmount)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    Button(action:{
+                        self.mGroceryViewModel.isPopOverShown = false
+                    }){
+                        Text("Add Grocery")
+                    }
+                }.padding()
+                }
+                
+            )
+                .navigationBarColor(UIColor.init(named: "grocery-color"))
+        }
+    }
+    
+    func deleteItems(at offsets: IndexSet) {
+        //groceries.remove(atOffsets: offsets)
     }
 }
 
@@ -19,3 +98,47 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+extension View {
+    
+    func navigationBarColor(_ backgroundColor: UIColor?) -> some View {
+        self.modifier(NavigationBarModifier(backgroundColor: backgroundColor))
+    }
+    
+}
+
+struct NavigationBarModifier: ViewModifier {
+    
+    var backgroundColor: UIColor?
+    
+    init( backgroundColor: UIColor?) {
+        self.backgroundColor = backgroundColor
+        let coloredAppearance = UINavigationBarAppearance()
+        coloredAppearance.configureWithTransparentBackground()
+        coloredAppearance.backgroundColor = .clear
+        coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        UINavigationBar.appearance().standardAppearance = coloredAppearance
+        UINavigationBar.appearance().compactAppearance = coloredAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
+        UINavigationBar.appearance().tintColor = .white
+        
+    }
+    
+    func body(content: Content) -> some View {
+        ZStack{
+            content
+            VStack {
+                GeometryReader { geometry in
+                    Color(self.backgroundColor ?? .clear)
+                        .frame(height: geometry.safeAreaInsets.top)
+                        .edgesIgnoringSafeArea(.top)
+                    Spacer()
+                }
+            }
+        }
+    }
+}
+
+
