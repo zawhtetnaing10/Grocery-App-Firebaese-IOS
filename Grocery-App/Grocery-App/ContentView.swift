@@ -20,6 +20,7 @@ struct ContentView: View {
                     return HStack(){
                         
                         VStack(alignment: .leading){
+                            
                             Text(grocery.name ?? "")
                                 .fontWeight(.bold)
                                 .font(.title)
@@ -34,6 +35,7 @@ struct ContentView: View {
                         VStack{
                             Button(action:{
                                 self.mGroceryViewModel.isPopOverShown = true
+                                self.mGroceryViewModel.onTapEditGrocery(groceryName: grocery.name ?? "", groceryDescription: grocery.description ?? "", groceryAmount: String(grocery.amount ?? 0))
                             }){
                                 Image(systemName: "pencil")
                             }.sheet(isPresented: self.$mGroceryViewModel.isPopOverShown){
@@ -54,7 +56,7 @@ struct ContentView: View {
                                 }.padding()
                             }
                             Spacer()
-                            Text(String(grocery.amount ?? 0) ?? "")
+                            Text(String(grocery.amount ?? 0))
                                 .font(.headline)
                             
                         }
