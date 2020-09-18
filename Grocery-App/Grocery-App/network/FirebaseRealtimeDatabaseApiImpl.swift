@@ -38,4 +38,8 @@ class FirebaseRealtimeDatabaseApiImpl : FirebaseApi{
             "amount" : grocery.amount ?? "",
         ])
     }
+    
+    func deleteGrocery(grocery : GroceryVO){
+        ref.child("groceries").child(grocery.name ?? "").removeValue()
+    }
 }

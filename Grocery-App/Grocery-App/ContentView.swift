@@ -92,6 +92,9 @@ struct ContentView: View {
     
     func deleteItems(at offsets: IndexSet) {
         //groceries.remove(atOffsets: offsets)
+        let chosenIndex = offsets.map{$0}.first ?? 0
+        let chosenGrocery = mGroceryViewModel.groceries[chosenIndex]
+        mGroceryViewModel.onDeleteGrocery(grocery: chosenGrocery)
     }
 }
 

@@ -39,7 +39,7 @@ class GroceryViewModel : ObservableObject{
     }
     
     func onDeleteGrocery(grocery : GroceryVO){
-        
+        mGroceryModel.removeGrocery(grocery: grocery)
     }
     
     func onTapEditGrocery(groceryName: String , groceryDescription : String, groceryAmount: String){

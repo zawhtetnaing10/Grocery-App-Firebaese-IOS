@@ -20,4 +20,8 @@ class GroceryModelImpl : GroceryModel{
     func addGrocery(grocery: GroceryVO){
         mFirebaseApi.addGrocery(grocery: grocery)
     }
+    
+    func removeGrocery(grocery: GroceryVO){
+        mFirebaseApi.deleteGrocery(grocery: grocery)
+    }
 }
