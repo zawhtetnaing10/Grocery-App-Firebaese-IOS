@@ -15,16 +15,16 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             List{
-                ForEach(mGroceryViewModel.groceries, id: \.self){ grocery in
+                ForEach(mGroceryViewModel.groceries, id: \.name){ grocery in
                     
                     return HStack(){
                         
                         VStack(alignment: .leading){
-                            Text("Pizza")
+                            Text(grocery.name ?? "")
                                 .fontWeight(.bold)
                                 .font(.title)
                             
-                            Text("This is for the kids at home")
+                            Text(grocery.description ?? "")
                                 .fontWeight(.regular)
                                 .foregroundColor(.secondary)
                                 .padding(.top, 20)
@@ -53,7 +53,7 @@ struct ContentView: View {
                                 }.padding()
                             }
                             Spacer()
-                            Text("x5")
+                            Text(String(grocery.amount ?? 0) ?? "")
                                 .font(.headline)
                             
                         }

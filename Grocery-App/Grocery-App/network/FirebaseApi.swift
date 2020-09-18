@@ -8,4 +8,6 @@
 
 import Foundation
 
-
+protocol FirebaseApi {
+    func getAllGroceries(success: @escaping([GroceryVO]) -> Void, failure: @escaping (String) -> Void)
+}
