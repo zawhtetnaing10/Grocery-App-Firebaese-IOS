@@ -30,4 +30,12 @@ class FirebaseRealtimeDatabaseApiImpl : FirebaseApi{
             success(groceriesList)
         })
     }
+    
+    func addGrocery(grocery : GroceryVO){
+        ref.child("groceries").child(grocery.name ?? "").setValue([
+            "name" : grocery.name ?? "",
+            "description" : grocery.description ?? "",
+            "amount" : grocery.amount ?? "",
+        ])
+    }
 }

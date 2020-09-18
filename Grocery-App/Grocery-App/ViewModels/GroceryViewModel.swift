@@ -31,6 +31,14 @@ class GroceryViewModel : ObservableObject{
     }
     
     func onTapAddGrocery(){
+        let grocery = GroceryVO()
+        grocery.name = groceryName
+        grocery.description = groceryDescription
+        grocery.amount = Int(groceryAmount) ?? 0
+        mGroceryModel.addGrocery(grocery: grocery)
+    }
+    
+    func onDeleteGrocery(grocery : GroceryVO){
         
     }
     

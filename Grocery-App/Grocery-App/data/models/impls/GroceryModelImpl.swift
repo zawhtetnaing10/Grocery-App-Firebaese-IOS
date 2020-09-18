@@ -16,4 +16,8 @@ class GroceryModelImpl : GroceryModel{
     func getAllGroceries(success: @escaping([GroceryVO]) -> Void, failure: @escaping (String) -> Void){
         mFirebaseApi.getAllGroceries(success: success, failure: failure)
     }
+    
+    func addGrocery(grocery: GroceryVO){
+        mFirebaseApi.addGrocery(grocery: grocery)
+    }
 }

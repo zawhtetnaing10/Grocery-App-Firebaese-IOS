@@ -46,6 +46,7 @@ struct ContentView: View {
                                         self.$mGroceryViewModel.groceryAmount)
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
                                     Button(action:{
+                                        self.mGroceryViewModel.onTapAddGrocery()
                                         self.mGroceryViewModel.isPopOverShown = false
                                     }){
                                         Text("Add Grocery")
@@ -76,6 +77,7 @@ struct ContentView: View {
                         self.$mGroceryViewModel.groceryAmount)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     Button(action:{
+                        self.mGroceryViewModel.onTapAddGrocery()
                         self.mGroceryViewModel.isPopOverShown = false
                     }){
                         Text("Add Grocery")
