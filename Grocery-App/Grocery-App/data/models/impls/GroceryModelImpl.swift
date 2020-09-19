@@ -11,7 +11,8 @@ import Foundation
 class GroceryModelImpl : GroceryModel{
     
     /// Api
-    let mFirebaseApi : FirebaseApi = FirebaseRealtimeDatabaseApiImpl()
+    //let mFirebaseApi : FirebaseApi = FirebaseRealtimeDatabaseApiImpl()
+    let mFirebaseApi : FirebaseApi = CloudFireStoreFirebaseApiImpl()
     
     func getAllGroceries(success: @escaping([GroceryVO]) -> Void, failure: @escaping (String) -> Void){
         mFirebaseApi.getAllGroceries(success: success, failure: failure)
