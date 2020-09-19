@@ -31,7 +31,21 @@ class CloudFireStoreFirebaseApiImpl : FirebaseApi{
     }
     
     func addGrocery(grocery: GroceryVO) {
+        let groceryDictionary : [String : Any] = [
+            "name" : grocery.name ?? "",
+            "description" : grocery.description ?? "",
+            "amount" : grocery.amount ?? ""
+        ]
         
+        db.collection("groceries")
+            .document(grocery.name ?? "")
+            .setData(groceryDictionary){ err in
+                if let error = err{
+                    print("Failed to add data => \(error.localizedDescription)")
+                } else{
+                    print("Successfully add data")
+                }
+        }
     }
     
     func deleteGrocery(grocery: GroceryVO) {
