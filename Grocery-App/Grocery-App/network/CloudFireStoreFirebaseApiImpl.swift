@@ -43,12 +43,20 @@ class CloudFireStoreFirebaseApiImpl : FirebaseApi{
                 if let error = err{
                     print("Failed to add data => \(error.localizedDescription)")
                 } else{
-                    print("Successfully add data")
+                    print("Successfully added data")
                 }
         }
     }
     
     func deleteGrocery(grocery: GroceryVO) {
-    
+        db.collection("groceries")
+            .document(grocery.name ?? "")
+            .delete(){ err in
+             if let error = err{
+                    print("Failed to delete data => \(error.localizedDescription)")
+                } else{
+                    print("Successfully deleted data")
+                }
+        }
     } 
 }
