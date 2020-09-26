@@ -13,4 +13,5 @@ class GroceryVO : Identifiable{
     var name: String?
     var description: String?
     var amount : Int?
+    var image: String?
 }

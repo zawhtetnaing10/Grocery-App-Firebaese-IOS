@@ -88,6 +88,7 @@
 		6162368A2513D4DC002D43AA /* Grocery-App */ = {
 			isa = PBXGroup;
 			children = (
+				618AA4AD251D889A00D42019 /* imagepicker */,
 				616236AD25142BA9002D43AA /* GoogleService-Info.plist */,
 				616236A725142A73002D43AA /* network */,
 				616236A425142A66002D43AA /* data */,
@@ -161,6 +162,13 @@
 				616236B425142D36002D43AA /* GroceryModelImpl.swift */,
 			);
 			path = impls;
+			sourceTree = "<group>";
+		};
+		618AA4AD251D889A00D42019 /* imagepicker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = imagepicker;
 			sourceTree = "<group>";
 		};
 		8853ED0F83649BB5FF659E4D /* Frameworks */ = {

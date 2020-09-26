@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 protocol GroceryModel {
     func getAllGroceries(success: @escaping([GroceryVO]) -> Void, failure: @escaping (String) -> Void)
     func addGrocery(grocery: GroceryVO)
     func removeGrocery(grocery: GroceryVO)
+    func uploadGroceryImage(image: Data, grocery: GroceryVO)
 }

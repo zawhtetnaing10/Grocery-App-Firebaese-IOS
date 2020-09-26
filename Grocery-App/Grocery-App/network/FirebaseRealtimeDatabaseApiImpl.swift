@@ -8,10 +8,12 @@
 
 import Foundation
 import FirebaseDatabase
+import FirebaseStorage
 
 class FirebaseRealtimeDatabaseApiImpl : FirebaseApi{
     
     var ref: DatabaseReference = Database.database().reference()
+    let storage = Storage.storage()
     
     func getAllGroceries(success: @escaping([GroceryVO]) -> Void, failure: @escaping (String) -> Void){
         ref.child("groceries").observe(DataEventType.value, with: { (snapshot) in
@@ -24,6 +26,7 @@ class FirebaseRealtimeDatabaseApiImpl : FirebaseApi{
                 grocery.name = groceryDictionary["name"] as? String
                 grocery.description = groceryDictionary["description"] as? String
                 grocery.amount = groceryDictionary["amount"] as? Int
+                grocery.image = groceryDictionary["image"] as? String
                 groceriesList.append(grocery)
             }
             
@@ -36,10 +39,30 @@ class FirebaseRealtimeDatabaseApiImpl : FirebaseApi{
             "name" : grocery.name ?? "",
             "description" : grocery.description ?? "",
             "amount" : grocery.amount ?? "",
+            "image" : grocery.image ?? "",
         ])
     }
     
     func deleteGrocery(grocery : GroceryVO){
         ref.child("groceries").child(grocery.name ?? "").removeValue()
     }
+    
+    func uploadImage(imageData: Data, grocery: GroceryVO) {
+
+        let storageRef = storage.reference()
+        
+        let groceryImageRef = storageRef.child("images/\(UUID().uuidString).jpg")
+
+        groceryImageRef.putData(imageData, metadata: nil) { (metadata, error) in
+            groceryImageRef.downloadURL { (url, error) in
+                guard let downloadURL = url else {
+                    return
+                }
+                grocery.image = downloadURL.absoluteString
+                self.addGrocery(grocery: grocery)
+            }
+        }
+    }
+    
+    
 }

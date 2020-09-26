@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 class GroceryViewModel : ObservableObject{
     
@@ -21,6 +22,13 @@ class GroceryViewModel : ObservableObject{
     @Published var groceryName : String = ""
     @Published var groceryDescription : String = ""
     @Published var groceryAmount : String = ""
+    
+    // Image Picker
+    @Published var isShowImagePicker : Bool = false
+    @Published var chosenImage : UIImage = UIImage()
+    
+    // Chosen Grocery
+    var chosenGrocery : GroceryVO? = nil
     
     init(){
         mGroceryModel.getAllGroceries(success: { (groceries) in
@@ -46,5 +54,14 @@ class GroceryViewModel : ObservableObject{
         self.groceryName = groceryName
         self.groceryDescription = groceryDescription
         self.groceryAmount = groceryAmount
+    }
+    
+    func onGroceryItemChosen(grocery : GroceryVO){
+        self.chosenGrocery = grocery
+    }
+    
+    func onImageChosen(image : UIImage){
+        guard let chosenGrocery = self.chosenGrocery else { return }
+        mGroceryModel.uploadGroceryImage(image: image.jpegData(compressionQuality: 1.0) ?? Data(), grocery: chosenGrocery)
     }
 }

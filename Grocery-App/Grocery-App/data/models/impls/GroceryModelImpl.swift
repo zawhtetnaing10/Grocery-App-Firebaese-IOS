@@ -10,6 +10,7 @@ import Foundation
 
 class GroceryModelImpl : GroceryModel{
     
+    
     /// Api
     //let mFirebaseApi : FirebaseApi = FirebaseRealtimeDatabaseApiImpl()
     let mFirebaseApi : FirebaseApi = CloudFireStoreFirebaseApiImpl()
@@ -25,4 +26,9 @@ class GroceryModelImpl : GroceryModel{
     func removeGrocery(grocery: GroceryVO){
         mFirebaseApi.deleteGrocery(grocery: grocery)
     }
+    
+    func uploadGroceryImage(image: Data, grocery: GroceryVO) {
+        mFirebaseApi.uploadImage(imageData: image, grocery: grocery)
+    }
+    
 }
