@@ -14,7 +14,6 @@ struct ContentView: View {
     @ObservedObject var mGroceryViewModel = GroceryViewModel()
     
     var body: some View {
-        NavigationView{
             List{
                 ForEach(mGroceryViewModel.groceries, id: \.name){ grocery in
                     
@@ -126,7 +125,8 @@ struct ContentView: View {
                 
             )
                 .navigationBarColor(UIColor.init(named: "grocery-color"))
-        }
+            
+        
     }
     
     func deleteItems(at offsets: IndexSet) {
@@ -217,20 +217,6 @@ struct ImagePicker : UIViewControllerRepresentable{
     }
     
     func updateUIViewController(_ uiViewController: ImagePicker.UIViewControllerType, context: Context) {
-        
-    }
-}
-
-struct DummyView : UIViewRepresentable{
-    func updateUIView(_ uiView: DummyView.UIViewType, context: Context) {
-        
-    }
-    
-    func makeUIView(context: Context) -> some UIView {
-        let button = UIButton()
-        button.setTitle("Dummy", for: .normal)
-        button.backgroundColor = .red
-        return button
         
     }
 }

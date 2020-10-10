@@ -13,6 +13,7 @@ import FirebaseStorage
 class FirebaseRealtimeDatabaseApiImpl : FirebaseApi{
     
     var ref: DatabaseReference = Database.database().reference()
+    
     let storage = Storage.storage()
     
     func getAllGroceries(success: @escaping([GroceryVO]) -> Void, failure: @escaping (String) -> Void){

@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		15F1D7FF5D97A2EE1B93D804 /* Pods_Grocery_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D7C888E314F742BC23ED6D /* Pods_Grocery_App.framework */; };
+		612D799B253086FF00A1E919 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612D799A253086FF00A1E919 /* AuthManager.swift */; };
+		612D799D25308AA400A1E919 /* FirebaseAuthManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612D799C25308AA400A1E919 /* FirebaseAuthManagerImpl.swift */; };
+		612D799F25311C7F00A1E919 /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612D799E25311C7E00A1E919 /* AuthenticationModel.swift */; };
+		612D79A125311CB000A1E919 /* AuthenticationModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612D79A025311CB000A1E919 /* AuthenticationModelImpl.swift */; };
+		612D79A425311D4E00A1E919 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612D79A325311D4E00A1E919 /* LoginView.swift */; };
+		612D79A625311FA500A1E919 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612D79A525311FA500A1E919 /* LoginViewModel.swift */; };
+		612D79A825311FAE00A1E919 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612D79A725311FAE00A1E919 /* RegisterViewModel.swift */; };
+		612D79AA253125E500A1E919 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612D79A9253125E500A1E919 /* RegisterView.swift */; };
 		6162368C2513D4DC002D43AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6162368B2513D4DC002D43AA /* AppDelegate.swift */; };
 		6162368E2513D4DC002D43AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6162368D2513D4DC002D43AA /* SceneDelegate.swift */; };
 		616236902513D4DC002D43AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6162368F2513D4DC002D43AA /* ContentView.swift */; };
@@ -26,6 +34,14 @@
 
 /* Begin PBXFileReference section */
 		5160715300D59AFDF404340F /* Pods-Grocery-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grocery-App.release.xcconfig"; path = "Target Support Files/Pods-Grocery-App/Pods-Grocery-App.release.xcconfig"; sourceTree = "<group>"; };
+		612D799A253086FF00A1E919 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		612D799C25308AA400A1E919 /* FirebaseAuthManagerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManagerImpl.swift; sourceTree = "<group>"; };
+		612D799E25311C7E00A1E919 /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
+		612D79A025311CB000A1E919 /* AuthenticationModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModelImpl.swift; sourceTree = "<group>"; };
+		612D79A325311D4E00A1E919 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		612D79A525311FA500A1E919 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		612D79A725311FAE00A1E919 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		612D79A9253125E500A1E919 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		616236882513D4DC002D43AA /* Grocery-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6162368B2513D4DC002D43AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6162368D2513D4DC002D43AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +83,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		612D79A225311D1900A1E919 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				6162368F2513D4DC002D43AA /* ContentView.swift */,
+				612D79A325311D4E00A1E919 /* LoginView.swift */,
+				612D79A9253125E500A1E919 /* RegisterView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		6162367F2513D4DB002D43AA = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +114,7 @@
 		6162368A2513D4DC002D43AA /* Grocery-App */ = {
 			isa = PBXGroup;
 			children = (
+				612D79A225311D1900A1E919 /* views */,
 				618AA4AD251D889A00D42019 /* imagepicker */,
 				616236AD25142BA9002D43AA /* GoogleService-Info.plist */,
 				616236A725142A73002D43AA /* network */,
@@ -95,7 +122,6 @@
 				616236A12514276A002D43AA /* ViewModels */,
 				6162368B2513D4DC002D43AA /* AppDelegate.swift */,
 				6162368D2513D4DC002D43AA /* SceneDelegate.swift */,
-				6162368F2513D4DC002D43AA /* ContentView.swift */,
 				616236912513D4E7002D43AA /* Assets.xcassets */,
 				616236962513D4E7002D43AA /* LaunchScreen.storyboard */,
 				616236992513D4E7002D43AA /* Info.plist */,
@@ -116,6 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				616236A225142788002D43AA /* GroceryViewModel.swift */,
+				612D79A525311FA500A1E919 /* LoginViewModel.swift */,
+				612D79A725311FAE00A1E919 /* RegisterViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -142,6 +170,7 @@
 			children = (
 				616236B325142D2E002D43AA /* impls */,
 				616236B125142CF8002D43AA /* GroceryModel.swift */,
+				612D799E25311C7E00A1E919 /* AuthenticationModel.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -152,6 +181,8 @@
 				616236A925142A85002D43AA /* FirebaseApi.swift */,
 				616236AB25142A9D002D43AA /* FirebaseRealtimeDatabaseApiImpl.swift */,
 				619D8A9F2515D62000D3507A /* CloudFireStoreFirebaseApiImpl.swift */,
+				612D799A253086FF00A1E919 /* AuthManager.swift */,
+				612D799C25308AA400A1E919 /* FirebaseAuthManagerImpl.swift */,
 			);
 			path = network;
 			sourceTree = "<group>";
@@ -160,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				616236B425142D36002D43AA /* GroceryModelImpl.swift */,
+				612D79A025311CB000A1E919 /* AuthenticationModelImpl.swift */,
 			);
 			path = impls;
 			sourceTree = "<group>";
@@ -296,13 +328,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				616236B025142CC4002D43AA /* GroceryVO.swift in Sources */,
+				612D79A125311CB000A1E919 /* AuthenticationModelImpl.swift in Sources */,
+				612D799F25311C7F00A1E919 /* AuthenticationModel.swift in Sources */,
+				612D79A425311D4E00A1E919 /* LoginView.swift in Sources */,
+				612D79A625311FA500A1E919 /* LoginViewModel.swift in Sources */,
 				616236B225142CF8002D43AA /* GroceryModel.swift in Sources */,
 				616236A325142788002D43AA /* GroceryViewModel.swift in Sources */,
 				616236B525142D36002D43AA /* GroceryModelImpl.swift in Sources */,
 				616236AC25142A9D002D43AA /* FirebaseRealtimeDatabaseApiImpl.swift in Sources */,
+				612D79AA253125E500A1E919 /* RegisterView.swift in Sources */,
+				612D79A825311FAE00A1E919 /* RegisterViewModel.swift in Sources */,
 				616236AA25142A85002D43AA /* FirebaseApi.swift in Sources */,
 				6162368C2513D4DC002D43AA /* AppDelegate.swift in Sources */,
 				6162368E2513D4DC002D43AA /* SceneDelegate.swift in Sources */,
+				612D799D25308AA400A1E919 /* FirebaseAuthManagerImpl.swift in Sources */,
+				612D799B253086FF00A1E919 /* AuthManager.swift in Sources */,
 				616236902513D4DC002D43AA /* ContentView.swift in Sources */,
 				619D8AA02515D62000D3507A /* CloudFireStoreFirebaseApiImpl.swift in Sources */,
 			);

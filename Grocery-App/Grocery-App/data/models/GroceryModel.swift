@@ -14,4 +14,5 @@ protocol GroceryModel {
     func addGrocery(grocery: GroceryVO)
     func removeGrocery(grocery: GroceryVO)
     func uploadGroceryImage(image: Data, grocery: GroceryVO)
+
 }

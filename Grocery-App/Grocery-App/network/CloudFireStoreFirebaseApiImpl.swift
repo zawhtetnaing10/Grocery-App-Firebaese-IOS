@@ -13,6 +13,7 @@ import FirebaseFirestore
 class CloudFireStoreFirebaseApiImpl : FirebaseApi{
     
     let db = Firestore.firestore()
+    
     let storage = Storage.storage()
     
     func getAllGroceries(success: @escaping ([GroceryVO]) -> Void, failure: @escaping (String) -> Void) {
