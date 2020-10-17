@@ -9,11 +9,12 @@
 import Foundation
 
 class GroceryModelImpl : GroceryModel{
-    
-    
+   
     /// Api
     //let mFirebaseApi : FirebaseApi = FirebaseRealtimeDatabaseApiImpl()
     let mFirebaseApi : FirebaseApi = CloudFireStoreFirebaseApiImpl()
+    
+    let mFirebaseRemoteConfig : FirebaseRemoteConfigManager = FirebaseRemoteConfigManager.shared
     
     func getAllGroceries(success: @escaping([GroceryVO]) -> Void, failure: @escaping (String) -> Void){
         mFirebaseApi.getAllGroceries(success: success, failure: failure)
@@ -31,4 +32,15 @@ class GroceryModelImpl : GroceryModel{
         mFirebaseApi.uploadImage(imageData: image, grocery: grocery)
     }
     
+    func setUpRemoteConfigWithDefaultValues(){
+        mFirebaseRemoteConfig.setUpRemoteConfigWithDefaultValues()
+    }
+    
+    func fetchRemoteConfigs(){
+        mFirebaseRemoteConfig.fetchRemoteConfigs()
+    }
+    
+    func getAppNameFromRemoteConfig() -> String {
+        mFirebaseRemoteConfig.getToolbarName()
+    }
 }

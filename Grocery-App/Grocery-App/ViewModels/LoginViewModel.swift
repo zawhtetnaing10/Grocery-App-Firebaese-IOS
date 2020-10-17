@@ -20,6 +20,12 @@ class LoginViewModel: ObservableObject {
     @Published var isNavigateToRegisterScreen : Bool = false;
     @Published var isNavigateToHomeScreen : Bool = false;
     
+    init(){
+        mGroceryModel.setUpRemoteConfigWithDefaultValues()
+        mGroceryModel.fetchRemoteConfigs()
+    }
+    
+    let mGroceryModel : GroceryModel = GroceryModelImpl()
     let mAuthenticationModel : AuthenticationModel = AuthenticationModelImpl()
     
     func onTapLogin(){

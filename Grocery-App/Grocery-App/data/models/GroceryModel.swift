@@ -14,5 +14,8 @@ protocol GroceryModel {
     func addGrocery(grocery: GroceryVO)
     func removeGrocery(grocery: GroceryVO)
     func uploadGroceryImage(image: Data, grocery: GroceryVO)
-
+    func setUpRemoteConfigWithDefaultValues()
+    func fetchRemoteConfigs()
+    
+    func getAppNameFromRemoteConfig() -> String
 }

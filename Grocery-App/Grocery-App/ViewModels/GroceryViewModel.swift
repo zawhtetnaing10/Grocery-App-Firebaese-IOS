@@ -15,6 +15,9 @@ class GroceryViewModel : ObservableObject{
     // Models
     let mGroceryModel : GroceryModel = GroceryModelImpl()
     
+    // Remote Config
+    @Published var appBarName : String = ""
+    
     // Data
     @Published var groceries : [GroceryVO] = []
     @Published var isPopOverShown : Bool = false
@@ -36,6 +39,9 @@ class GroceryViewModel : ObservableObject{
         }) { (error) in
             print(error)
         }
+        
+        appBarName = mGroceryModel.getAppNameFromRemoteConfig()
+        print("AppBarName ======> \(appBarName)")
     }
     
     func onTapAddGrocery(){

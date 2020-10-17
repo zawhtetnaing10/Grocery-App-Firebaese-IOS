@@ -30,6 +30,7 @@
 		616236B225142CF8002D43AA /* GroceryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616236B125142CF8002D43AA /* GroceryModel.swift */; };
 		616236B525142D36002D43AA /* GroceryModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616236B425142D36002D43AA /* GroceryModelImpl.swift */; };
 		619D8AA02515D62000D3507A /* CloudFireStoreFirebaseApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619D8A9F2515D62000D3507A /* CloudFireStoreFirebaseApiImpl.swift */; };
+		61FF1D43253AADD9004EE39C /* FirebaseRemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FF1D42253AADD9004EE39C /* FirebaseRemoteConfigManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		616236B125142CF8002D43AA /* GroceryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryModel.swift; sourceTree = "<group>"; };
 		616236B425142D36002D43AA /* GroceryModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryModelImpl.swift; sourceTree = "<group>"; };
 		619D8A9F2515D62000D3507A /* CloudFireStoreFirebaseApiImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudFireStoreFirebaseApiImpl.swift; sourceTree = "<group>"; };
+		61FF1D42253AADD9004EE39C /* FirebaseRemoteConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteConfigManager.swift; sourceTree = "<group>"; };
 		92D7C888E314F742BC23ED6D /* Pods_Grocery_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Grocery_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D55AE4A0CEBBF9D785D10A9C /* Pods-Grocery-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grocery-App.debug.xcconfig"; path = "Target Support Files/Pods-Grocery-App/Pods-Grocery-App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,6 +185,7 @@
 				619D8A9F2515D62000D3507A /* CloudFireStoreFirebaseApiImpl.swift */,
 				612D799A253086FF00A1E919 /* AuthManager.swift */,
 				612D799C25308AA400A1E919 /* FirebaseAuthManagerImpl.swift */,
+				61FF1D42253AADD9004EE39C /* FirebaseRemoteConfigManager.swift */,
 			);
 			path = network;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				612D79A625311FA500A1E919 /* LoginViewModel.swift in Sources */,
 				616236B225142CF8002D43AA /* GroceryModel.swift in Sources */,
 				616236A325142788002D43AA /* GroceryViewModel.swift in Sources */,
+				61FF1D43253AADD9004EE39C /* FirebaseRemoteConfigManager.swift in Sources */,
 				616236B525142D36002D43AA /* GroceryModelImpl.swift in Sources */,
 				616236AC25142A9D002D43AA /* FirebaseRealtimeDatabaseApiImpl.swift in Sources */,
 				612D79AA253125E500A1E919 /* RegisterView.swift in Sources */,

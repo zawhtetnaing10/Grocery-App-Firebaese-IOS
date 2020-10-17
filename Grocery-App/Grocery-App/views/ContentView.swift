@@ -102,7 +102,7 @@ struct ContentView: View {
             .onTapGesture {
                 return
             }
-            .navigationBarTitle(Text("Grocery App"))
+            .navigationBarTitle(Text(mGroceryViewModel.appBarName))
             .navigationBarItems(trailing: Button("Add New"){
                 self.mGroceryViewModel.isPopOverShown = true
             }.sheet(isPresented: $mGroceryViewModel.isPopOverShown){

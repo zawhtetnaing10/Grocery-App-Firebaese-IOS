@@ -15,5 +15,5 @@ target 'Grocery-App' do
   pod 'SDWebImageSwiftUI'
   pod 'Firebase/Storage'
   pod 'Firebase/Auth'
-
+  pod 'Firebase/RemoteConfig'
 end
