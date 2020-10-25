@@ -9,6 +9,7 @@
 import Foundation
 import Combine
 import UIKit
+import Firebase
 
 class GroceryViewModel : ObservableObject{
     
@@ -34,14 +35,16 @@ class GroceryViewModel : ObservableObject{
     var chosenGrocery : GroceryVO? = nil
     
     init(){
-        mGroceryModel.getAllGroceries(success: { (groceries) in
-            self.groceries = groceries
+        
+        Analytics.logEvent(SCREEN_HOME, parameters: nil)
+        
+        mGroceryModel.getAllGroceries(success: { [weak self] (groceries) in
+            self?.groceries = groceries
         }) { (error) in
             print(error)
         }
         
         appBarName = mGroceryModel.getAppNameFromRemoteConfig()
-        print("AppBarName ======> \(appBarName)")
     }
     
     func onTapAddGrocery(){

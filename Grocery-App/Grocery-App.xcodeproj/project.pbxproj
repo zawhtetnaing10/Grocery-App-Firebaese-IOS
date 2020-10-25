@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		15F1D7FF5D97A2EE1B93D804 /* Pods_Grocery_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D7C888E314F742BC23ED6D /* Pods_Grocery_App.framework */; };
+		6106962A25440F8900EB5001 /* FirebaseAnalyticsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6106962925440F8900EB5001 /* FirebaseAnalyticsUtils.swift */; };
+		6106962E2545567400EB5001 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6106962D2545567400EB5001 /* GoogleService-Info.plist */; };
 		612D799B253086FF00A1E919 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612D799A253086FF00A1E919 /* AuthManager.swift */; };
 		612D799D25308AA400A1E919 /* FirebaseAuthManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612D799C25308AA400A1E919 /* FirebaseAuthManagerImpl.swift */; };
 		612D799F25311C7F00A1E919 /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612D799E25311C7E00A1E919 /* AuthenticationModel.swift */; };
@@ -25,7 +27,6 @@
 		616236A325142788002D43AA /* GroceryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616236A225142788002D43AA /* GroceryViewModel.swift */; };
 		616236AA25142A85002D43AA /* FirebaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616236A925142A85002D43AA /* FirebaseApi.swift */; };
 		616236AC25142A9D002D43AA /* FirebaseRealtimeDatabaseApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616236AB25142A9D002D43AA /* FirebaseRealtimeDatabaseApiImpl.swift */; };
-		616236AE25142BA9002D43AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 616236AD25142BA9002D43AA /* GoogleService-Info.plist */; };
 		616236B025142CC4002D43AA /* GroceryVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616236AF25142CC4002D43AA /* GroceryVO.swift */; };
 		616236B225142CF8002D43AA /* GroceryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616236B125142CF8002D43AA /* GroceryModel.swift */; };
 		616236B525142D36002D43AA /* GroceryModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616236B425142D36002D43AA /* GroceryModelImpl.swift */; };
@@ -35,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		5160715300D59AFDF404340F /* Pods-Grocery-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grocery-App.release.xcconfig"; path = "Target Support Files/Pods-Grocery-App/Pods-Grocery-App.release.xcconfig"; sourceTree = "<group>"; };
+		6106962925440F8900EB5001 /* FirebaseAnalyticsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsUtils.swift; sourceTree = "<group>"; };
+		6106962D2545567400EB5001 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		612D799A253086FF00A1E919 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		612D799C25308AA400A1E919 /* FirebaseAuthManagerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManagerImpl.swift; sourceTree = "<group>"; };
 		612D799E25311C7E00A1E919 /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
@@ -54,7 +57,6 @@
 		616236A225142788002D43AA /* GroceryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryViewModel.swift; sourceTree = "<group>"; };
 		616236A925142A85002D43AA /* FirebaseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseApi.swift; sourceTree = "<group>"; };
 		616236AB25142A9D002D43AA /* FirebaseRealtimeDatabaseApiImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRealtimeDatabaseApiImpl.swift; sourceTree = "<group>"; };
-		616236AD25142BA9002D43AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		616236AF25142CC4002D43AA /* GroceryVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryVO.swift; sourceTree = "<group>"; };
 		616236B125142CF8002D43AA /* GroceryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryModel.swift; sourceTree = "<group>"; };
 		616236B425142D36002D43AA /* GroceryModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryModelImpl.swift; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 				5160715300D59AFDF404340F /* Pods-Grocery-App.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		6106962825440F7600EB5001 /* analytics */ = {
+			isa = PBXGroup;
+			children = (
+				6106962925440F8900EB5001 /* FirebaseAnalyticsUtils.swift */,
+			);
+			path = analytics;
 			sourceTree = "<group>";
 		};
 		612D79A225311D1900A1E919 /* views */ = {
@@ -116,15 +126,16 @@
 		6162368A2513D4DC002D43AA /* Grocery-App */ = {
 			isa = PBXGroup;
 			children = (
+				6106962825440F7600EB5001 /* analytics */,
 				612D79A225311D1900A1E919 /* views */,
 				618AA4AD251D889A00D42019 /* imagepicker */,
-				616236AD25142BA9002D43AA /* GoogleService-Info.plist */,
 				616236A725142A73002D43AA /* network */,
 				616236A425142A66002D43AA /* data */,
 				616236A12514276A002D43AA /* ViewModels */,
 				6162368B2513D4DC002D43AA /* AppDelegate.swift */,
 				6162368D2513D4DC002D43AA /* SceneDelegate.swift */,
 				616236912513D4E7002D43AA /* Assets.xcassets */,
+				6106962D2545567400EB5001 /* GoogleService-Info.plist */,
 				616236962513D4E7002D43AA /* LaunchScreen.storyboard */,
 				616236992513D4E7002D43AA /* Info.plist */,
 				616236932513D4E7002D43AA /* Preview Content */,
@@ -226,6 +237,7 @@
 				616236852513D4DC002D43AA /* Frameworks */,
 				616236862513D4DC002D43AA /* Resources */,
 				7946E42BB06F34760AC3EBCB /* [CP] Embed Pods Frameworks */,
+				61A955562545AEE2009C0401 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -275,15 +287,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				616236982513D4E7002D43AA /* LaunchScreen.storyboard in Resources */,
+				6106962E2545567400EB5001 /* GoogleService-Info.plist in Resources */,
 				616236952513D4E7002D43AA /* Preview Assets.xcassets in Resources */,
 				616236922513D4E7002D43AA /* Assets.xcassets in Resources */,
-				616236AE25142BA9002D43AA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		61A955562545AEE2009C0401 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
 		649048CA4E528E41FED0D63A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -344,6 +375,7 @@
 				612D79A825311FAE00A1E919 /* RegisterViewModel.swift in Sources */,
 				616236AA25142A85002D43AA /* FirebaseApi.swift in Sources */,
 				6162368C2513D4DC002D43AA /* AppDelegate.swift in Sources */,
+				6106962A25440F8900EB5001 /* FirebaseAnalyticsUtils.swift in Sources */,
 				6162368E2513D4DC002D43AA /* SceneDelegate.swift in Sources */,
 				612D799D25308AA400A1E919 /* FirebaseAuthManagerImpl.swift in Sources */,
 				612D799B253086FF00A1E919 /* AuthManager.swift in Sources */,
@@ -399,7 +431,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -486,6 +518,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Grocery-App/Preview Content\"";
 				DEVELOPMENT_TEAM = J8KK28846H;
 				ENABLE_PREVIEWS = YES;

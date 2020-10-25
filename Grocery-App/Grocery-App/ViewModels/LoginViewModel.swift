@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftUI
+import Firebase
 import Combine
 
 class LoginViewModel: ObservableObject {
@@ -21,6 +22,7 @@ class LoginViewModel: ObservableObject {
     @Published var isNavigateToHomeScreen : Bool = false;
     
     init(){
+        Analytics.logEvent(SCREEN_LOGIN, parameters: nil)
         mGroceryModel.setUpRemoteConfigWithDefaultValues()
         mGroceryModel.fetchRemoteConfigs()
     }
@@ -29,6 +31,7 @@ class LoginViewModel: ObservableObject {
     let mAuthenticationModel : AuthenticationModel = AuthenticationModelImpl()
     
     func onTapLogin(){
+        Analytics.logEvent(TAP_LOGIN, parameters: [ PARAMETER_EMAIL : mEmail ])
         mAuthenticationModel.login(email: mEmail, password: mPassword, onSuccess: {
             self.isError = false
             self.isNavigateToHomeScreen = true

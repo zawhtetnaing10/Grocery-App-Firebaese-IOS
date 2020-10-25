@@ -11,9 +11,7 @@ import SwiftUI
 struct LoginView: View {
     
     @ObservedObject var mLoginViewModel = LoginViewModel()
-    
-    
-    
+   
     var body: some View {
         
         NavigationView{

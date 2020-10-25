@@ -16,6 +16,5 @@ protocol GroceryModel {
     func uploadGroceryImage(image: Data, grocery: GroceryVO)
     func setUpRemoteConfigWithDefaultValues()
     func fetchRemoteConfigs()
-    
     func getAppNameFromRemoteConfig() -> String
 }

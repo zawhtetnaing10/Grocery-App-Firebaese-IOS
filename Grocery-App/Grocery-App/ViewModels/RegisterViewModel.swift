@@ -9,6 +9,7 @@
 import Foundation
 import SwiftUI
 import Combine
+import Firebase
 
 class RegisterViewModel: ObservableObject {
     @Published var mEmail : String = "";
@@ -20,7 +21,14 @@ class RegisterViewModel: ObservableObject {
     
     let mAuthenticationModel : AuthenticationModel = AuthenticationModelImpl()
     
+    init(){
+        Analytics.logEvent(SCREEN_REGISTER, parameters: nil)
+    }
+    
     func onTapRegister(onSuccess : @escaping () -> Void){
+        
+        Analytics.logEvent(TAP_REGISTER, parameters: [PARAMETER_EMAIL : mEmail])
+        
         mAuthenticationModel.register(email: mEmail, password: mPassword, userName: mUserName, onSuccess: onSuccess, onFailure:{ error in
             DispatchQueue.main.async {
                 self.errorMessage = error
