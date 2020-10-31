@@ -13,6 +13,8 @@ struct ContentView: View {
     
     @ObservedObject var mGroceryViewModel = GroceryViewModel()
     
+    
+    
     var body: some View {
             List{
                 ForEach(mGroceryViewModel.groceries, id: \.name){ grocery in

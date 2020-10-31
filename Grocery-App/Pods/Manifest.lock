@@ -234,6 +234,12 @@ PODS:
   - Firebase/Database (6.27.0):
     - Firebase/CoreOnly
     - FirebaseDatabase (~> 6.3.0)
+  - Firebase/InAppMessaging (6.27.0):
+    - Firebase/CoreOnly
+    - FirebaseInAppMessaging (~> 0.21.0)
+  - Firebase/Messaging (6.27.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (~> 4.5.0)
   - Firebase/RemoteConfig (6.27.0):
     - Firebase/CoreOnly
     - FirebaseRemoteConfig (~> 4.6.0)
@@ -290,11 +296,31 @@ PODS:
     - nanopb (~> 1.30905.0)
   - FirebaseFirestoreSwift (0.4.0):
     - FirebaseFirestore (>= 1.6.1, ~> 1.6)
+  - FirebaseInAppMessaging (0.21.0):
+    - FirebaseABTesting (~> 3.2)
+    - FirebaseCore (~> 6.8)
+    - FirebaseInstallations (~> 1.1)
+    - GoogleDataTransportCCTSupport (~> 3.1)
+    - GoogleUtilities/Environment (~> 6.5)
+    - nanopb (~> 1.30905.0)
   - FirebaseInstallations (1.4.0):
     - FirebaseCore (~> 6.8)
     - GoogleUtilities/Environment (~> 6.6)
     - GoogleUtilities/UserDefaults (~> 6.6)
     - PromisesObjC (~> 1.2)
+  - FirebaseInstanceID (4.4.0):
+    - FirebaseCore (~> 6.8)
+    - FirebaseInstallations (~> 1.0)
+    - GoogleUtilities/Environment (~> 6.5)
+    - GoogleUtilities/UserDefaults (~> 6.5)
+  - FirebaseMessaging (4.5.0):
+    - FirebaseCore (~> 6.8)
+    - FirebaseInstanceID (~> 4.3)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.5)
+    - GoogleUtilities/Environment (~> 6.5)
+    - GoogleUtilities/Reachability (~> 6.5)
+    - GoogleUtilities/UserDefaults (~> 6.5)
+    - Protobuf (>= 3.9.2, ~> 3.9)
   - FirebaseRemoteConfig (4.6.0):
     - FirebaseABTesting (~> 3.1)
     - FirebaseCore (~> 6.8)
@@ -377,6 +403,8 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Crashlytics
   - Firebase/Database
+  - Firebase/InAppMessaging
+  - Firebase/Messaging
   - Firebase/RemoteConfig
   - Firebase/Storage
   - FirebaseFirestoreSwift
@@ -396,7 +424,10 @@ SPEC REPOS:
     - FirebaseDatabase
     - FirebaseFirestore
     - FirebaseFirestoreSwift
+    - FirebaseInAppMessaging
     - FirebaseInstallations
+    - FirebaseInstanceID
+    - FirebaseMessaging
     - FirebaseRemoteConfig
     - FirebaseStorage
     - GoogleAppMeasurement
@@ -426,7 +457,10 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 3d02ffa794ec174853c086cf87cf2dc79bd6da49
   FirebaseFirestore: 5ea7b0878363f9ec66bdcee0c29ad875d1b511ac
   FirebaseFirestoreSwift: 2c46dbc1156db97dc4f6dd798d4f5b57b9c7fab6
+  FirebaseInAppMessaging: b91934b2c8dfc6ae3ce6bbdf3fb9b57224c3b47b
   FirebaseInstallations: 293f567159b6d66d1c990f13bb868066096c94ec
+  FirebaseInstanceID: 3b119bfe90e904851218159c9a4ecb847cc51d18
+  FirebaseMessaging: ad9e1a80ea64905e01a0ce1b3eb76a2944544151
   FirebaseRemoteConfig: 63ae9d14848e645c7f070daa6af89265be48f803
   FirebaseStorage: af7bdbd12177cf567df00904e3e3a93704f25b15
   GoogleAppMeasurement: 2fd5c5a56c069db635c8e7b92d4809a9591d0a69
@@ -443,6 +477,6 @@ SPEC CHECKSUMS:
   SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
   SDWebImageSwiftUI: 43687ffe232ddd33fe0659498b7ca9884fdd6b35
 
-PODFILE CHECKSUM: ff63bac2cd0ecb9024f70f30590e83cac242f982
+PODFILE CHECKSUM: f15adf1363d5bb12078bc46f4d9a00b732929dda
 
 COCOAPODS: 1.10.0.beta.2
