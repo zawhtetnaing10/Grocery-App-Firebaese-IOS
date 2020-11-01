@@ -20,15 +20,23 @@ struct GroceryApp : App {
     
     var body: some Scene{
         WindowGroup{
-            NavigationLink(destination: ContentView(), isActive: $isNavigateToHomeScreen){
+            NavigationView{
                 LoginView()
+                    .background(
+                        NavigationLink(destination: ContentView(), isActive: $isNavigateToHomeScreen) {
+                            EmptyView()
+                        }
+                    )
+                    .onOpenURL { (url) in
+                        print("URL =========> \(url)")
+                        if(url.absoluteString.contains("home")){
+                            isNavigateToHomeScreen = true
+                        }
+                    }
             }
-            .onOpenURL { (url) in
-                if(url.absoluteString == "https://padc.com.mm"){
-                    isNavigateToHomeScreen = true
-                }
-            }
-           
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
+            
         }
     }
 }
@@ -36,6 +44,10 @@ struct GroceryApp : App {
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
+        InstanceID.instanceID().instanceID { (result, error) in
+            guard let result = result else { return }
+            print("Firebase Token =======> \(result.token)")
+        }
         return true
     }
 }
